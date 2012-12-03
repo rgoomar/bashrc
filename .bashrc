@@ -60,4 +60,3 @@ alias partusage='df -hlT --exclude-type=tmpfs --exclude-type=devtmpfs'
 #current directory
 alias most='du -hsx * | sort -rh | head -10'
 
-alias dropbox='/home/rishi/builds/dropbox/src/.dropbox-dist/dropboxd'
