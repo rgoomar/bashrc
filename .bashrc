@@ -1,6 +1,23 @@
+#Auto completion for everything else
+if [ -f /etc/bash_completion ]; then
+ . /etc/bash_completion
+fi
+if [ "$TERM" == "xterm" ]; then
+    # No it isn't, it's gnome-terminal
+    export TERM=xterm-256color
+fi
+
+#Tab completion for menus
+#bind '"\t":menu-complete'
+
 #basic bash commands
 alias ls='ls -a --color=auto'
 alias c='clear'
+
+# Make some possibly destructive commands more interactive.
+#alias rm='rm -i'
+#alias mv='mv -i'
+#alias cp='cp -i'
 
 #system options
 alias reboot='sudo reboot'
@@ -21,7 +38,7 @@ alias mount='mount |column -t'
 alias ports='netstat -tulanp'
 
 #Update and Upgrade
-alias update='sudo apt-get update && sudo apt-get upgrade'
+alias update='sudo pacman -Syu'
 
 #Shows what is using the most CPU
 alias pscpu='ps auxf | sort -nr -k 3'
@@ -42,3 +59,5 @@ alias partusage='df -hlT --exclude-type=tmpfs --exclude-type=devtmpfs'
 #Gives you what is using the most space. Both directories and files. Varies on
 #current directory
 alias most='du -hsx * | sort -rh | head -10'
+
+alias dropbox='/home/rishi/builds/dropbox/src/.dropbox-dist/dropboxd'
