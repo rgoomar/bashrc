@@ -11,6 +11,9 @@ function parse_git_branch {
     echo "("${ref#refs/heads/}")"
 }
 
+# Setup sync between two folders
+alias rsync='rsync -a --delete'
+
 # Let's get some colors in here
 alias ls='ls --color=auto'
 
@@ -29,7 +32,7 @@ alias ports='netstat -tulanp'
 alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 
-# Disk Utilities
+### Disk Utilities
 
 # Grabs disk usage in current directory
 alias diskUsage='du -ch | grep total'
@@ -42,6 +45,17 @@ alias partusage='df -hlT --exclude-type=tmpfs --exclude-type=devtmpfs'
 
 # Tells you what is using the most space
 alias most='du -hsx * | sort -rh | head -10'
+
+### System Information
+
+# Kernel Version
+alias kversion='uname -a'
+
+# Name and Version of Distro
+alias nandv='head -n1 /etc/issue'
+
+# CPU Information
+alias mycpu='grep "model name" /proc/cpuinfo'
 
 # Regular Colors
 Black="\[\033[0;30m\]"        # Black
